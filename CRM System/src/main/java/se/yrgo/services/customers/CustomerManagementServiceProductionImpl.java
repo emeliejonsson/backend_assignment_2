@@ -1,9 +1,11 @@
 package se.yrgo.services.customers;
 
+import org.springframework.transaction.annotation.Transactional;
 import se.yrgo.dataaccess.CustomerDao;
 import se.yrgo.dataaccess.RecordNotFoundException;
 import se.yrgo.domain.Call;
 import se.yrgo.domain.Customer;
+
 
 import java.util.List;
 
@@ -21,6 +23,7 @@ public class CustomerManagementServiceProductionImpl implements CustomerManageme
     }
 
     @Override
+    @Transactional
     public void updateCustomer(Customer changedCustomer) throws CustomerNotFoundException {
         try {
             customerDao.update(changedCustomer);
@@ -30,6 +33,7 @@ public class CustomerManagementServiceProductionImpl implements CustomerManageme
     }
 
     @Override
+    @Transactional
     public void deleteCustomer(Customer oldCustomer) throws CustomerNotFoundException {
         try {
             customerDao.delete(oldCustomer);
@@ -67,6 +71,7 @@ public class CustomerManagementServiceProductionImpl implements CustomerManageme
     }
 
     @Override
+    @Transactional
     public void recordCall(String customerId, Call callDetails) throws CustomerNotFoundException {
         try {
             customerDao.addCall(callDetails, customerId);

@@ -1,9 +1,7 @@
-package se.yrgo.services.customers;
+package se.yrgo.dataaccess;
 
-import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import se.yrgo.dataaccess.CustomerDao;
 import se.yrgo.domain.Call;
 import se.yrgo.domain.Customer;
 
