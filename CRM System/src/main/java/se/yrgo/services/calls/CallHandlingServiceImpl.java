@@ -1,19 +1,18 @@
 package se.yrgo.services.calls;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import se.yrgo.domain.Action;
 import se.yrgo.domain.Call;
-import se.yrgo.services.customers.CustomerManagementMockImpl;
 import se.yrgo.services.customers.CustomerManagementService;
 import se.yrgo.services.customers.CustomerManagementServiceProductionImpl;
 import se.yrgo.services.customers.CustomerNotFoundException;
 import se.yrgo.services.diary.DiaryManagementService;
 import se.yrgo.services.diary.DiaryManagementServiceImpl;
-import se.yrgo.services.diary.DiaryManagementServiceMockImpl;
 
 
 import java.util.Collection;
-
+@Service
 public class CallHandlingServiceImpl implements CallHandlingService {
     private CustomerManagementService customerService;
     private DiaryManagementService diary;
